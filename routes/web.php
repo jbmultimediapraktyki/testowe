@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,10 +20,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('tasks', ['uses' =>'MyController@index',
-    'as'=> 'tasks.index']);
-Route::get('tasks/create', ['uses'=> 'MyController@create',
-    'as'=>'tasks.create']);
-Route::post('tasks/store', ['uses'=> 'MyController@store',
-    'as'=> 'tasks.store']);
 
+Route::resource('tasks', 'MyController', ['only' => ['index', 'create', 'store','show', 'edit', 'update'], 'middleware' => ['auth']]);
+
+Route::group([
+    'middleware'=> ['auth'],
+],function(){
+
+    Route::put('tasks/update/{task}', ['uses' => 'MyController@archive',
+        'as'=> 'tasks.archive']);
+    Route::get('tasks/showArchived', ['uses' => 'MyController@showArchived',
+        'as' => 'tasks.showArchived']);
+
+});

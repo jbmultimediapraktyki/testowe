@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        {{ Form::open(['route'=>'tasks.store']) }}
+        {{ Form::model($task, ['route'=>['tasks.update', $task],'method' => 'PUT']) }}
         @if ($errors -> any())
             @foreach ($errors->all() as $error)
                 <div class="btn btn-danger">{{$error}}</div>
@@ -11,18 +11,19 @@
         @endif
 
         <div class="form-group">
+
             {{ Form::label('title', "Task: ") }}
-            {{ Form::text('title', null, ['class'=> 'form-control']) }}
+            {{ Form::text('title', $task->title, ['class'=> 'form-control']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('content', "Text: ") }}
-            {{ Form::textarea('content', null, ['class'=> 'form-control']) }}
+            {{ Form::textarea('content', $task->content, ['class'=> 'form-control']) }}
         </div>
 
         <div class="form-group">
             {{ Form::submit('Submit', ['class'=> 'btn btn-primary']) }}
-            {{link_to(URL::previous(), 'Cancel', ['class'=> 'btn btn-default']) }}
+            {{ link_to(URL::previous(), 'Cancel', ['class'=> 'btn btn-default']) }}
         </div>
 
         {{ Form::close() }}

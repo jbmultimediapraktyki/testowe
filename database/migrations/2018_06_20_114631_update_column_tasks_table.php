@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tasks extends Migration
+class UpdateColumnTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class Tasks extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('content');
-            $table->integer('users_id')->unsigned();
-            $table->timestamps();
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->dateTime('archived_at')->nullable(true);
         });
-
     }
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +25,8 @@ class Tasks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::table('tasks', function (Blueprint $table) {
+          $table->dropColumn('archived_at');
+        });
     }
 }

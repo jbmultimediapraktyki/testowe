@@ -30,6 +30,6 @@ class User extends Authenticatable
 
     public function tasks() // użytkownik może mieć wiele zadań do zrobienia
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Tasks::class, 'users_id');
     }
 }

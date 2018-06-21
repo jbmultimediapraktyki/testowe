@@ -20,10 +20,10 @@ class TasksRepository
      */
     public function forUser(User $user)
     {
-
-        return Tasks::where('user_id', Auth::user()->id)
-            ->orderBy('created_at', 'asc')
-            ->get();
+//        //return Auth::user()->tasks;
+//        return Tasks::where('user_id', Auth::user()->id)
+//            ->orderBy('created_at', 'asc')
+//            ->get();
 
     }
 }
