@@ -21,15 +21,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('tasks', 'MyController', ['only' => ['index', 'create', 'store','show', 'edit', 'update'], 'middleware' => ['auth']]);
 
 Route::group([
     'middleware'=> ['auth'],
 ],function(){
+    Route::get('tasks/showArchived', [
+        'uses' => 'MyController@showArchived',
+        'as' => 'tasks.showArchived'
+    ]);
+    Route::resource('tasks', 'MyController');
 
     Route::put('tasks/update/{task}', ['uses' => 'MyController@archive',
         'as'=> 'tasks.archive']);
-    Route::get('tasks/showArchived', ['uses' => 'MyController@showArchived',
-        'as' => 'tasks.showArchived']);
+
 
 });

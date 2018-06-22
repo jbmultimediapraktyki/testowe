@@ -25,8 +25,10 @@ class TasksRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:191',
-            'content'=> 'required',
+
+            'title' => 'required_if:action,null|max:191',
+            'content' => 'required_if:action,null|string',
+            'action' => 'nullable|in:archived'
         ];
     }
 }
