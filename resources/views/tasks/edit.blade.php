@@ -11,7 +11,6 @@
         @endif
 
         <div class="form-group">
-
             {{ Form::label('title', "Task: ") }}
             {{ Form::text('title', $task->title, ['class'=> 'form-control']) }}
         </div>

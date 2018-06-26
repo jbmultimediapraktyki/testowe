@@ -25,8 +25,6 @@
                     <th>TASK</th>
                     <th>CREATED</th>
                     <th>OPTIONS</th>
-
-
                 </tr>
 
                 @foreach ($tasks as $task)
@@ -50,19 +48,17 @@
                                 <form action="{{ route('tasks.destroy', $task) }}" method="POST">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
-                                    <button class="btn btn-outline-danger" href="#">{{ __('Delete') }}</button>
+                                    <button class="btn btn-outline-danger"
+                                            href="{{ route('tasks.destroy', $task)}}">{{ __('Delete') }}</button>
                                 </form>
                             </div>
-
                         </td>
-
                     </tr>
                 @endforeach
 
             </table>
-
         </div>
-        <a class="btn btn-primary" href="{{route('tasks.showArchived')}}"> {{ __('Show archived') }}</a>
+            <a class='btn btn-primary' href="{{route('tasks.showArchived')}}"> {{ __('Show archived') }}</a>
     </div>
 
 @endsection
