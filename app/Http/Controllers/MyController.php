@@ -124,7 +124,7 @@ class MyController extends Controller
         ]);
     }
 
-    private function updateTask(TasksRequest $request, $task)
+    private function updateTask(TasksRequest $request, Tasks $task)
     {
         $task->update($request->all());
     }
