@@ -21,10 +21,10 @@
         <div class="card">
             <table class="table table-hover">
                 <tr>
-                    <th>NR</th>
-                    <th>TASK</th>
-                    <th>CREATED</th>
-                    <th>OPTIONS</th>
+                    <th>{{ __("NR") }}</th>
+                    <th>{{ __("TASK") }}</th>
+                    <th>{{ __("CREATED") }}</th>
+                    <th>{{ __("OPTIONS") }}</th>
                 </tr>
 
                 @foreach ($tasks as $task)

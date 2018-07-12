@@ -73,6 +73,21 @@
                                 </div>
                             </li>
                         @endguest
+
+                        <form action="{{ route('language') }}" method="POST">
+                            <div class="btn-group-sm top-right">
+
+                                {{csrf_field()}}
+                                <div class="btn-group-sm">
+                                    <button type="submit" name="locale" value="pl"
+                                            class="btn btn-primary">pl
+                                    </button>
+                                    <button type="submit" name="locale" value="en"
+                                            class="btn btn-primary">en
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </ul>
                 </div>
             </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "269e08becab3587cfd2ed7c67bd3371b",
+  "content-hash": "47990497dd47eb710c700047cde81697",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1464,6 +1464,56 @@
             "time": "2018-01-20T00:28:24+00:00"
         },
         {
+          "name": "scottybo/laravel-translator",
+          "version": "v0.1.3",
+          "source": {
+            "type": "git",
+            "url": "https://github.com/scottybo/laravel-translator.git",
+            "reference": "559ab30129c6119c69dd9bd9d4bc5c58fb0cc33c"
+          },
+          "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/scottybo/laravel-translator/zipball/559ab30129c6119c69dd9bd9d4bc5c58fb0cc33c",
+            "reference": "559ab30129c6119c69dd9bd9d4bc5c58fb0cc33c",
+            "shasum": ""
+          },
+          "require": {
+            "laravel/framework": ">=5.4",
+            "php": ">=7.0.0"
+          },
+          "require-dev": {
+            "phpunit/phpunit": "~6.0"
+          },
+          "type": "project",
+          "extra": {
+            "laravel": {
+              "providers": [
+                "Translator\\TranslatorServiceProvider"
+              ]
+            }
+          },
+          "autoload": {
+            "psr-4": {
+              "Translator\\": "src/"
+            },
+            "files": [
+              "src/helpers.php"
+            ]
+          },
+          "notification-url": "https://packagist.org/downloads/",
+          "license": [
+            "MIT"
+          ],
+          "authors": [
+            {
+              "name": "Scott Bowler",
+              "email": "scott.bowler@dcsworldwide.net"
+            }
+          ],
+          "description": "Fork of thiagocordeiro/laravel-translator to search translation keys in PHP and Vue/JS and insert into separate json files to be translated",
+          "time": "2018-03-08T10:14:52+00:00"
+        },
+      {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.0.2",
             "source": {

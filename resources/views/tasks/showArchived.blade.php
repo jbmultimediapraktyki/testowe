@@ -10,10 +10,10 @@
         <div class="card">
             <table class="table table-hover">
                 <tr>
-                    <th>NR</th>
-                    <th>TASK</th>
-                    <th>ARCHIVED</th>
-                    <th>DELETE</th>
+                    <th>{{ __("NR") }}</th>
+                    <th>{{ __("TASK") }}</th>
+                    <th>{{ __("ARCHIVED") }}/th>
+                    <th>{{ __("DELETE") }}</th>
                 </tr>
 
                 @foreach ($tasks as $task)

@@ -10,7 +10,7 @@
         <p>{{ $task->content }}</p>
     </div>
 
-    {{ link_to(URL::previous(), 'Back', ['class'=> 'btn btn-primary']) }}
+    {!!  link_to(URL::previous(), __("Back"), ['class'=> 'btn btn-primary'])  !!}
 
 </div>
     @endsection
